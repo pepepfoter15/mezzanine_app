@@ -88,7 +88,8 @@ USE_MODELTRANSLATION = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
+STATIC_ROOT = ''
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -137,22 +138,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #############
 
 DATABASES = {
-    "default": {
-        # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
-        # DB name or path to database file if using sqlite3.
-        "NAME": "",
-        # Not used with sqlite3.
-        "USER": "",
-        # Not used with sqlite3.
-        "PASSWORD": "",
-        # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
-        # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mezzanine',
+        'USER': 'mezzanine',
+        'PASSWORD': 'mezzanine',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
 
 #########
 # PATHS #
